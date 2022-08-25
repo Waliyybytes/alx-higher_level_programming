@@ -3,32 +3,41 @@
 #include "lists.h"
 
 /**
- * insert_node - if a singly list is a cycle
- * @head: list to insert in
- * @number: number to insert
- * Return: new list
+ * check_cycle - if a singly list is a cycle
+ * @list: list to check
+ * Return: 1 for SUCCESS
  */
 
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *current;
 	listint_t *temp;
-
+	listint_t *current;
+	
 	temp = malloc(sizeof(listint_t));
-	if (temp == NULL)
-		return (NULL);
-	current = *head;
-	while (current != NULL)
+    	if (temp == NULL)
+        	return (NULL);
+       
+        temp->n = number;
+	temp->next = NULL;
+	if (temp->n < (*head)->n)	
 	{
-		if (number > current->n && number < current->next->n)
+		temp->next = (*head);
+		(*head) = temp;
+		return (*head);
+	}
+	
+	current = *head;
+	while (current->next != NULL)
+	{
+		
+		if (number < current->next->n)
 		{
-			temp->n = number;
 			temp->next = current->next;
 			current->next = temp;
-			break;
+			return (*head);	
 		}
-		else
-			current = current->next;
+		current = current->next;
 	}
-	return (current);
+	current->next = temp;
+	return (*head);
 }
