@@ -8,5 +8,5 @@ def addition():
     print("{:d} + {:d} = {:d}".format(a, b, add(a,b)))
 
 
-if __name == "__main":
+if __name == "__main__":
     addition()
