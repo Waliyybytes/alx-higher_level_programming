@@ -12,16 +12,17 @@ def my_calculator():
         b = int(argv[3])
         match argv[2]:
             case '+':
-                print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
+                print("{} + {} = {}".format(a, b, add(a, b)))
             case '-':
-                print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
+                print("{} - {} = {}".format(a, b, sub(a, b)))
             case '*':
-                print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
+                print("{} * {} = {}".format(a, b, mul(a, b)))
             case '/':
-                print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
+                print("{} / {} = {}".format(a, b, div(a, b)))
             case _:
                 print("Unknown operator. Available operators: +, -, * and /")
                 exit(1)
+
 
 if __name__ == "__main__":
     my_calculator()
