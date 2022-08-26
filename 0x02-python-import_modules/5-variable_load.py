@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-import variable_load_5.py as vl
+import variable_load_5 as vl
 
 
-def unravel():
+def variable():
     print(f"{vl.a}")
 
 
 if __name__ == "__main__":
-    unravel()
+    variable()
