@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-import variable_load_5 as vl
+import variable_load_5
 
 
 def variable():
-    print(f"{vl.a}")
+    print(variable_load_5.a)
 
 
 if __name__ == "__main__":
