@@ -10,18 +10,17 @@ def my_calculator():
     else:
         a = int(argv[1])
         b = int(argv[3])
-        match argv[2]:
-            case '+':
-                print("{} + {} = {}".format(a, b, add(a, b)))
-            case '-':
-                print("{} - {} = {}".format(a, b, sub(a, b)))
-            case '*':
-                print("{} * {} = {}".format(a, b, mul(a, b)))
-            case '/':
-                print("{} / {} = {}".format(a, b, div(a, b)))
-            case _:
-                print("Unknown operator. Available operators: +, -, * and /")
-                exit(1)
+        if argv[2] == "+":
+            print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
+        elif argv[2] == "-":
+            print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
+        elif argv[2] == "*":
+            print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
+        elif argv[2] == "/":
+            print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
+        else:
+            print("Unknown operator. Available operators: +, -, * and /")
+            exit(1)
 
 
 if __name__ == "__main__":
