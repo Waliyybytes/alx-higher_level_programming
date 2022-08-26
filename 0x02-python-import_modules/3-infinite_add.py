@@ -8,5 +8,6 @@ def command_line():
         add += int(i)
     print(add)
 
+
 if __name__ == "__main__":
     command_line()
