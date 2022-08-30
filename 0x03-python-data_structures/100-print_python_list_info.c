@@ -1,4 +1,6 @@
-#include "Python.h"
+#include <Python.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * print_python_list_info - print info on python list
