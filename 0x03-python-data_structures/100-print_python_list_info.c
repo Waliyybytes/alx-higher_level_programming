@@ -1,4 +1,4 @@
-#include "Python.h"
+#include <Python.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -21,8 +21,8 @@ void print_python_list_info(PyObject *p)
 
 	while (i < size)
 	{
-		obj = PyList_GetItem(p, i);
-		printf("Element %ld: %s\n", i, Py_type(obj)->tp_name);
+		obj = PyList_GetItem(list, i);
+		printf("Element %ld: %s\n", i, Py_Type(obj)->tp_name);
 		i++;
 	}
 }
