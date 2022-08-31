@@ -3,8 +3,9 @@
 #include "lists.h"
 
 /**
- * check_cycle - if a singly list is a cycle
- * @list: list to check
+ * insert_node - if a singly list is a cycle
+ * @head: member
+ * @number: member
  * Return: 1 for SUCCESS
  */
 
