@@ -3,4 +3,6 @@ def best_score(a_dictionary):
     if not a_dictionary:
         return None
     else:
-        return max(a_dictionary.values())
+        val = max(a_dictionary.values())
+        key_idx = list(a_dictionary.values()).index(val)
+        return list(a_dictionary.values())[key_idx]
