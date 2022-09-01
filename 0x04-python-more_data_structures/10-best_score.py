@@ -5,4 +5,4 @@ def best_score(a_dictionary):
     else:
         val = max(a_dictionary.values())
         key_idx = list(a_dictionary.values()).index(val)
-        return list(a_dictionary.values())[key_idx]
+        return list(a_dictionary.keys())[key_idx]
