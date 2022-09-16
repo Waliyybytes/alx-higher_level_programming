@@ -57,7 +57,7 @@ class Node:
         if type(value) is Node or value is None:
             self.__next_node = value
         else:
-            raise TypeError("next_Node must be a Node object")
+            raise TypeError("next_node must be a Node object")
 
     def __str__(self):
         """
