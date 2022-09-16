@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+"""
+    This module contains two classes that implements a linked list in python
 
+    - a  Node class that implememts a node in a list
+    - a  Singly_linked_list class that implements a singly linked lists
+ 
+"""
 
 class Node:
     """
