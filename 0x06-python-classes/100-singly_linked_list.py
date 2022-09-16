@@ -4,8 +4,8 @@
 
     - a  Node class that implememts a node in a list
     - a  Singly_linked_list class that implements a singly linked lists
- 
 """
+
 
 class Node:
     """
@@ -60,7 +60,7 @@ class Node:
             raise TypeError("next_Node must be a Node object")
 
     def __str__(self):
-        """ 
+        """
         string representation of class Node
         """
         return str(self.__data)
@@ -69,7 +69,7 @@ class Node:
 class SinglyLinkedList:
     """
     Definition of a Singly linked list Using the Node class above
-    
+
     Methods:
             sorted_insert, __init__, __str__
     """
@@ -101,7 +101,7 @@ class SinglyLinkedList:
         """
         String representation of Singly linked list
 
-        Return: 
+        Return:
             Returns a formatted string output
         """
         rep = ""
