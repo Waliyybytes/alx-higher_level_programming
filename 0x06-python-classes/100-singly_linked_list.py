@@ -2,7 +2,7 @@
 
 
 class Node:
-    """"This class definition of a singly linked list"""
+    """This class definition of a singly linked list"""
     def __init__(self, data, next_node=None):
         """
         Initializes the square
@@ -16,10 +16,12 @@ class Node:
 
     @property
     def data(self):
+        """data getter"""
         return self.__data
 
     @data.setter
     def data(self, value):
+        """data setter"""
         if type(value) is not int:
             raise TypeError("data must be an integer")
         else:
@@ -27,10 +29,12 @@ class Node:
 
     @property
     def next_node(self):
+        """next_node getter"""
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
+        """next_node setter"""
         if type(value) is Node or value is None:
             self.__next_node = value
         else:
