@@ -96,8 +96,7 @@ class Square:
         a = self.__size
         p = self.__position
         if a == 0:
-            print()
-            return
+            return ''
         p_x = " " * p[0]
         p_y = "\n" * p[1]
         sqr = "#" * a
