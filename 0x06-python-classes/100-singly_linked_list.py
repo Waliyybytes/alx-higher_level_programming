@@ -2,12 +2,17 @@
 
 
 class Node:
-    """This class definition of a singly linked list"""
+    """
+    This class definition of a singly linked list
+
+    """
     def __init__(self, data, next_node=None):
         """
         Initializes the square
         Args:
             data(int), next_node
+        Methods:
+            __init__, __str__
         Returns:
             None
         """
@@ -16,12 +21,16 @@ class Node:
 
     @property
     def data(self):
-        """data getter"""
+        """
+        data getter
+        """
         return self.__data
 
     @data.setter
     def data(self, value):
-        """data setter"""
+        """
+        data setter
+        """
         if type(value) is not int:
             raise TypeError("data must be an integer")
         else:
@@ -29,27 +38,35 @@ class Node:
 
     @property
     def next_node(self):
-        """next_node getter"""
+        """
+        next_node getter
+        """
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
-        """next_node setter"""
+        """
+        next_node setter
+        """
         if type(value) is Node or value is None:
             self.__next_node = value
         else:
             raise TypeError("next_Node must be a Node object")
 
     def __str__(self):
-        """ string representation of class Node"""
+        """ 
+        string representation of class Node
+        """
         return str(self.__data)
 
 
 class SinglyLinkedList:
     """
     Definition of a Singly linked list Using the Node class above
+    
+    Methods:
+            sorted_insert, __init__, __str__
     """
-
     def __init__(self):
         """Initializes with a head Node"""
         self.__head = None
@@ -57,8 +74,8 @@ class SinglyLinkedList:
     def sorted_insert(self, value):
         """
         Gives a sorted representation of the singly linked list
-        :param value: value
-        :return: None
+        Arguments: value
+        Return: None
         """
         new = Node(value)
         tmp = self.__head
@@ -77,7 +94,9 @@ class SinglyLinkedList:
     def __str__(self):
         """
         String representation of Singly linked list
-        :return: Returns a formatted string output
+
+        Return: 
+            Returns a formatted string output
         """
         rep = ""
         tmp = self.__head
