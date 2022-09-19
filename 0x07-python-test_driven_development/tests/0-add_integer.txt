@@ -1,0 +1,55 @@
+The `0-add_integer.py` module
+=============================
+
+Using ``add_integer``
+-------------
+
+
+	Importing function from the module '0-add_integer'
+        >>> add_integer = __import__('0-add_integer').add_integer
+
+	Checking for module docstring
+        >>> m = __import__("0-add_integer").__doc__
+	>>> len(m) > 1
+        True
+
+        Checking for function docstring
+        >>> func = __import__('0-add_integer').add_integer.__doc__
+	>>> len(func) > 1
+        True
+
+	Checks normal addition
+        >>> add_integer(5, 9)
+        14
+
+	Checks add with NaN
+	>>> add_integer(4, float('nan'))
+	Traceback (most recent call last):
+	...
+	ValueError: cannot convert float NaN to integer
+	 
+	Checks for float in a
+	>>> add_integer(4, 1.9)
+	5
+
+	Checks for float in b
+	>>> add_integer(1.9, 4)
+	5
+	
+	Checks for bool in a
+	>>> add_integer(True, 9)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	Checks for bool in b
+        >>> add_integer(9, True)
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+	Checks for 'inf':
+	>>> add_integer(1, float('inf'))
+	Traceback (most recent call last):
+	...
+	OverflowError: cannot convert float infinity to integer
