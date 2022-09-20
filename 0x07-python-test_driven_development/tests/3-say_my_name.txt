@@ -1,0 +1,33 @@
+The `3-say_my_name.py` module
+=============================
+
+Using ``say_my_name``
+---------------------
+
+
+	Importing function from the module '3-say_my_name'
+        >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+	Checking for module docstring
+        >>> md = __import__("3-say_my_name").__doc__
+	>>> len(md) > 1
+        True
+
+        Checking for function docstring
+        >>> func = __import__('3-say_my_name').say_my_name.__doc__
+	>>> len(func) > 1
+        True
+
+	Checks normal print
+        >>> say_my_name("Waliu", "Ogunlaru")
+        My name is Waliu Ogunlaru
+	
+	Checks for wrong capitalization
+	>>> say_my_name("waLiu", "OgunLaru")
+	My name is Waliu Ogunlaru
+	
+	Checks for type str
+        >>> say_my_name("Waliu", 12)
+        Traceback (most recent call last):
+        ...
+        TypeError: last_name must be a string

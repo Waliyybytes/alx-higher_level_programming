@@ -1,0 +1,35 @@
+The `2-matrix_divided.py` module
+=============================
+
+Using ``matrix_divided``
+-------------
+
+
+	Importing function from the module '2-matrix_divided'
+        >>> add_integer = __import__('2-matrix_divided').matrix_divided
+
+	Checking for module docstring
+        >>> md = __import__("2-matrix_divided").__doc__
+	>>> len(md) > 1
+        True
+
+        Checking for function docstring
+        >>> func = __import__('2-matrix_divided').matrix_divided.__doc__
+	>>> len(func) > 1
+        True
+
+	Checks normal division
+        >>> matrix_divided([[1, 4], [6, 8]], 9)
+        [[0.11, 0.44], [0.67, 0.89]]
+	
+	Checks for bool in matrix
+	>>> matrix_divided([[1, True], [6, 8]], 9)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	Checks for bool in div
+        >>> matrix_divided([[1, 4], [6, 8]], True)
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats

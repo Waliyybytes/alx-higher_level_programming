@@ -1,0 +1,26 @@
+The `5-text_indentation.py` module
+=============================
+
+Using ``text_indentation``
+---------------------
+
+
+	Importing function from the module '5-text_indentation'
+        >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+	Checking for module docstring
+        >>> md = __import__("5-text_indentation").__doc__
+	>>> len(md) > 1
+        True
+
+        Checking for function docstring
+        >>> func = __import__("5-text_indentation").text_indentation.__doc__
+	>>> len(func) > 1
+        True
+	
+	Checks for type of text
+	>>> text_indentation(19)
+	Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
+
