@@ -3,7 +3,7 @@
     Module contains task to generate nqueens position on a
     n by n chessboard that are safe from each other.
 
-    Checks on n was carried out 
+    Checks on n was carried out
 
     Initialisation was done, then
 
@@ -41,9 +41,9 @@ def backtrack(r):
 
     if r == n:
         print(res)
-    for c in range(n): # columns increment
-        if c in col or (r + c) in posDg or (r - c) in negDg: 
-            #checks if position is available on the column or diagonals(left or right)
+    for c in range(n):
+        # Checks if queen is present on column or diagonals
+        if c in col or (r + c) in posDg or (r - c) in negDg:
             continue
 
         col.add(c)
