@@ -1,0 +1,121 @@
+#!/usr/bin/python3
+"""
+    Real definition of rectangle
+
+"""
+
+
+class Rectangle:
+    """
+    Real definition of rectangle parameters
+
+    Args:
+        width, height ----private attributes
+    """
+    number_of_instances = 0
+    print_symbol = "#"
+
+    def __init__(self, width=0, height=0):
+        """ Instantiates the class attributes"""
+
+        self.width = width
+        self.height = height
+        Rectangle.number_of_instances += 1
+        self.print_symbol = Rectangle.print_symbol
+
+    @property
+    def width(self):
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        elif value < 0:
+            raise ValueError("width must be >= 0")
+        else:
+            self.__width = value
+
+    @property
+    def height(self):
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
+        elif value < 0:
+            raise ValueError("height must be >= 0")
+        else:
+            self.__height = value
+
+    def area(self):
+        """
+        Evaluates the Area of the rectangle
+        Args:
+            None
+        Returns:
+            result of area calculated (int)
+        """
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """
+        Evaluates the perimeter of the rectangle
+        Args:
+            None
+        Returns:
+            result of area calculated (int)
+        """
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return 2 * (self.__width + self.__height)
+
+    def __str__(self):
+        """
+        Prints a rectangle instance
+        A string representation of the rectangle
+        """
+        rep = ""
+        a = self.__width
+        b = self.__height
+        if a == 0 or b == 0:
+            return ''
+        sqr = f"{str(self.print_symbol) * a}"
+        for i in range(b):
+            rep += sqr
+            if i != b - 1:
+                rep += '\n'
+        return rep
+
+    def __repr__(self):
+        """
+        A string representation of the rectangle
+        to be able to recreate a new instance by using eval()
+        """
+        return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        """
+        Destructor-like form when an instance is deleted
+
+        """
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """
+        Comparing two rectangle instances in terms of area
+
+        """
+        if type(rect_1) is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if type(rect_2) is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() > rect_2.area():
+            return rect_1
+        elif rect_2.area() > rect_1.area():
+            return rect_2
+        else:
+            return rect_1
