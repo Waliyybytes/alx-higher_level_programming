@@ -1,4 +1,16 @@
 #!/usr/bin/python3
+"""
+    Module contains task to generate nqueens position on a
+    n by n chessboard that are safe from each other.
+
+    Checks on n was carried out 
+
+    Initialisation was done, then
+
+    Recursive Backtracking was used
+
+"""
+
 from sys import argv
 
 if len(argv) != 2:
@@ -22,10 +34,16 @@ for i in range(n):
 
 
 def backtrack(r):
+    """
+        Backtracking function defined
+
+    """
+
     if r == n:
         print(res)
-    for c in range(n):
-        if c in col or (r + c) in posDg or (r - c) in negDg:
+    for c in range(n): # columns increment
+        if c in col or (r + c) in posDg or (r - c) in negDg: 
+            #checks if position is available on the column or diagonals(left or right)
             continue
 
         col.add(c)
@@ -33,8 +51,9 @@ def backtrack(r):
         negDg.add(r - c)
         res[r][1] = c
 
-        backtrack(r + 1)
+        backtrack(r + 1)   # recursive calls by increasing row number
 
+        # clears the sets for fresh starts
         col.remove(c)
         posDg.remove(r + c)
         negDg.remove(r - c)
