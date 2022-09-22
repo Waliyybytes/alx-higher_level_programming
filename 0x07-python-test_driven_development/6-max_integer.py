@@ -14,4 +14,12 @@ def max_integer(list=[]):
     for item in list:
         if type(item) not in [int, float]:
             raise TypeError("list must contain only integer/floats")
-    return max(list)
+    if len(list) == 0:
+        return None
+    mags = list[0]
+    i = 1
+    while i < len(list):
+        if list[i] > mags:
+            mags = list[i]
+        i += 1
+    return mags
