@@ -5,6 +5,7 @@
 import unittest
 max_integer = __import__("6-max_integer").max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
     """class definition inheriting from unittest.TestCase"""
     def test_module_docstring(self):
