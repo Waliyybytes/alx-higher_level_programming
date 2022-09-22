@@ -1,12 +1,21 @@
 #!/usr/bin/python3
 """
-	Unittest for max_integer([..])
+	A unittest for max_integer([..]) function
 """
 import unittest
 max_integer = __import__("6-max_integer").max_integer
 
 class TestMaxInteger(unittest.TestCase):
     """class definition inheriting from unittest.TestCase"""
+    def test_module_docstring(self):
+        """Checks for module doc"""
+        mdl = __import__('6-max_integer').__doc__
+        self.assertTrue(len(mdl) > 1)
+
+    def test_function_docstring(self):
+        """Tests for function doc"""
+        func = max_integer.__doc__
+        self.assertTrue(len(func) > 1)
 
     def test_max_integer(self):
         """ Test the maximum for normal integers"""
