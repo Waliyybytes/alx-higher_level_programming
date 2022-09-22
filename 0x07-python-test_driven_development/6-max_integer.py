@@ -12,6 +12,9 @@ def max_integer(list=[]):
         Args:
             list (given)
     """
+    for item in list:
+        if type(item).isdigit is False:
+            raise(TypeError)
     if len(list) == 0:
         return None
     mags = list[0]
