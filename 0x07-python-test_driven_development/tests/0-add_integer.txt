@@ -48,8 +48,18 @@ Using ``add_integer``
         ...
         TypeError: b must be an integer
 
-	Checks for 'inf':
+	Checks for 'inf'
 	>>> add_integer(1, float('inf'))
 	Traceback (most recent call last):
 	...
 	OverflowError: cannot convert float infinity to integer
+	
+	Checks for single argument
+	>>> add_integer(1)
+	99
+	
+	Checks for missing double arguments
+	>>> add_integer()
+	Traceback (most recent call last)
+	...
+	TypeError: add_integer() missing 1 required positional argument

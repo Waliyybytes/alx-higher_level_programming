@@ -4,16 +4,16 @@
 
     Function:
         add_integer
-    
+
 """
 
 
 def add_integer(a, b=98):
     """ A function that returns addition of two numbers
          Making sure a and b are integers
-        
+
         Arguments:
-            a, b 
+            a, b
     """
 
     if type(a) not in [int, float]:

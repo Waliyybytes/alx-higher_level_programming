@@ -31,3 +31,9 @@ Using ``say_my_name``
         Traceback (most recent call last):
         ...
         TypeError: last_name must be a string
+        
+        Checks for type str
+        >>> say_my_name(12, "Ogunlaru")
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string

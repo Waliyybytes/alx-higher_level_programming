@@ -25,12 +25,6 @@ Using ``print_square``
 	####
 	####
 
-	Checks for float with zero decimal value
-	>>> print_square(4.0)
-	####
-	####
-	####
-	####
 	
 	Checks for type
         >>> print_square("Waliu")

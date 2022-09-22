@@ -17,15 +17,12 @@ def print_square(size):
     import math
 
     if type(size) not in [int, float]:
-        if math.trunc(size) != size:
-            raise TypeError("size must be an integer")
-        raise TypeError("size must be an integer")
+    	raise TypeError("size must be an integer")
     if size < 0:
         if type(size) is float :
             raise TypeError("size must be an integer")
         raise ValueError("size must be >= 0")
     if size == 0:
-        print()
         exit()
     for _ in range(size):
         for _ in range(size):
