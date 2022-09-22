@@ -2,6 +2,8 @@
 """
     Module to lock a class with only one attribute
 """
+
+
 class LockedClass:
     """
         To dynamically prevent creation of other instance attributes
