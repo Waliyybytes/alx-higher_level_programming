@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-    Function to find maximum in a list
+    Function to find maximum number in a list
 
 """
+
 
 def max_integer(list=[]):
     """
@@ -11,9 +12,6 @@ def max_integer(list=[]):
         Args:
             list (given)
     """
-    for item in list:
-        if type(item) not in [int, float]:
-            raise TypeError("list must contain only integer/floats")
     if len(list) == 0:
         return None
     mags = list[0]
