@@ -41,6 +41,20 @@ Using ``add_integer``
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
+	
+	Checks for str in a
+	>>> add_integer("3", 9)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+	
+	Checks for str in b
+	>>> add_integer(9, "3")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+
 
 	Checks for bool in b
         >>> add_integer(9, True)
