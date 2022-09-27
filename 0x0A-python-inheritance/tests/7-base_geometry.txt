@@ -1,0 +1,50 @@
+The ``7-base_geometry`` module
+======================
+
+Using ``BaseGeometry``
+-------------------
+
+Importing the function from the module:
+	 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+Checking for module docstring:
+	 >>> m = __import__("7-base_geometry").__doc__
+	 >>> len(m) > 1
+	 True
+
+Checking for function docstring:
+	 >>> f = __import__("7-base_geometry").BaseGeometry.__doc__
+         >>> len(f) > 1
+         True
+
+Checking for normal integer
+	 >>> b = BaseGeometry()
+	 >>> b.integer_validator("square", 7)
+	 
+Checking for non integer
+	 >>> b = BaseGeometry()
+	 >>> b.integer_validator("square", 7.6)
+	 Traceback (most recent call last):
+	 ...
+	 <name> must be an integer
+	 
+Checking for integer less than zero
+	 >>> b = BaseGeometry()
+	 >>> b.integer_validator("square", -7)
+	 Traceback (most recent call last):
+	 ...
+	 <name> must be an greater than 0
+	 
+Checking for integer zero
+	 >>> b = BaseGeometry()
+	 >>> b.integer_validator("square", 0)
+	 Traceback (most recent call last):
+	 ...
+	 <name> must be an greater than 0
+	 
+Checking for arguments more than two 
+	 >>> b = BaseGeometry()
+	 >>> b.integer_validator("square", 6, 7)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: integer_validator takes 2 positional argument but 3 were given
