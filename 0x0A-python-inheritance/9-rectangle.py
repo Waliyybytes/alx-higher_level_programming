@@ -3,8 +3,26 @@
     Base Geometry module creation with subclass Rectangle
 
 """
+class BaseGeometry():
+    """
+        Creattion of class BaseGeometry
 
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    """
+    def area(self):
+        """
+            Method to implement area
+        """
+        raise Exception("area() is not implemented")
+
+    def integer_validator(self, name, value):
+        """
+            To validate the attribute 'value'
+
+        """
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
 
 
 class Rectangle(BaseGeometry):
