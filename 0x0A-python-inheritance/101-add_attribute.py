@@ -6,7 +6,7 @@
 
 def add_attribute(obj, name, value):
     """ method definition to check attribute addition"""
-    if '__dict__' in dir(obj) and isinstance(type(obj), object):
+    if '__dict__' in dir(obj):
         obj.name = value
     else:
         raise TypeError("can't add new attribute")
