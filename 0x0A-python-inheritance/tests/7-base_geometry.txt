@@ -5,7 +5,7 @@ Using ``BaseGeometry``
 -------------------
 
 Importing the function from the module:
-        >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+        >>> BG = __import__("7-base_geometry").BaseGeometry
 
 Checking for module docstring:
          >>> m = __import__("7-base_geometry").__doc__
@@ -26,7 +26,7 @@ Checking for method docstring:
          True
 
 Checking for area failure:
-	 >>> b = BaseGeometry()
+	 >>> b = BG()
 	 >>> b.area()
 	 Traceback (most recent call last):
 	 ...
