@@ -5,50 +5,54 @@ Using ``BaseGeometry``
 -------------------
 
 Importing the function from the module:
-	 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+        >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 Checking for module docstring:
-	 >>> m = __import__("7-base_geometry").__doc__
-	 >>> len(m) > 1
-	 True
-
-Checking for function docstring:
-	 >>> f = __import__("7-base_geometry").BaseGeometry.__doc__
-         >>> len(f) > 1
+         >>> m = __import__("7-base_geometry").__doc__
+         >>> len(m) > 1
          True
 
-Checking for normal integer
+Checking for class docstring:
+         >>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+         >>> len(c) > 1
+         True
+
+Checking for method docstring:
+	 >>> mod1 = __import__("7-base_geometry").BaseGeometry.area.__doc__
+	 >>> len(mod1) > 1
+	 True
+	 >>> mod2 = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+         >>> len(mod2) > 1
+         True
+
+Checking for area failure:
 	 >>> b = BaseGeometry()
-	 >>> b.integer_validator("square", 7)
-	 
-Checking for non integer
-	 >>> b = BaseGeometry()
-	 >>> b.integer_validator("square", 7.6)
+	 >>> b.area()
 	 Traceback (most recent call last):
 	 ...
-	 <name> must be an integer
-	 
-Checking for integer less than zero
-	 >>> b = BaseGeometry()
-	 >>> b.integer_validator("square", -7)
+	 Exception: area() is not implemented
+
+Checking too many arguments for area:
+	 >>> b.area(1)
 	 Traceback (most recent call last):
-	 ...
-	 <name> must be an greater than 0
-	 
-Checking for integer zero
-	 >>> b = BaseGeometry()
-	 >>> b.integer_validator("square", 0)
+         ...
+	 TypeError: area() takes 1 positional argument but 2 were given
+
+Checking integer validator for passing integer:
+	 >>> b.integer_validator("integer", 1)
+
+Checking for integer == 0:
+	 >>> b.integer_validator("integer", 0)
 	 Traceback (most recent call last):
-	 ...
-	 <name> must be an greater than 0
-	 
-Checking for arguments more than two 
-	 >>> b = BaseGeometry()
-	 >>> b.integer_validator("square", 6, 7)
+         ...
+         ValueError: integer must be greater than 0
+
+Checking for integer < 0;
+	 >>> b.integer_validator("integer", -5)
 	 Traceback (most recent call last):
-	 ...
-	 TypeError: integer_validator takes 2 positional argument but 3 were given
-	 
+         ...
+         ValueError: integer must be greater than 0
+
 Checking for non-integer types:
 	 >>> b.integer_validator("bool", True)
 	 Traceback (most recent call last):
@@ -101,3 +105,14 @@ Checking for no arguments to integer_validator:
          ...
 	 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
+Checking for only 1 argument to integer_validator:
+	 >>> b.integer_validator("integer")
+	 Traceback (most recent call last):
+         ...
+	 TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Checking for too many arguments:
+	 >>> b.integer_validator("integer", 1, 2)
+	 Traceback (most recent call last):
+         ...
+	 TypeError: integer_validator() takes 3 positional arguments but 4 were given
