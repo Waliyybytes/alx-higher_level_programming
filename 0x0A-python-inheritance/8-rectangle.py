@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    Base Geometry module creation
+    Base Geometry module creation with subclass Rectangle
 
 """
 
@@ -26,6 +26,7 @@ class BaseGeometry():
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
+
 class Rectangle(BaseGeometry):
     """
         Rectangle class inherits from BaseGeometry
@@ -33,6 +34,6 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """ attributes instantiation"""
         self.integer_validator("width", width)
-        self.integer_validator("height", height)
         self.__width = width
+        self.integer_validator("height", height)
         self.__height = height
