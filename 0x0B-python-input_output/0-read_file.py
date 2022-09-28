@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    Reading files 
+    Reading files
 """
 
 
