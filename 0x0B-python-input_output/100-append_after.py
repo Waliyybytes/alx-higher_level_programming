@@ -5,13 +5,15 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """ functions to search and update"""
+    """method to search and update"""
     with open(filename, 'r', encoding="utf-8") as f:
-        fcopy = f.readlines()
-        ls = len(fcopy)
-        for i in range(ls):
-            if search_string in fcopy[i]:
-                fcopy = fcopy[:i+1] + [new_string] + fcopy[i+1:]
-                i += 1
+        fcopy = []
+        while True:
+            line = f.readline()
+            if line == "":
+                break
+            fcopy.append(line)
+            if search_string in line:
+                fcopy.append(new_string)
     with open(filename, 'w', encoding="utf-8") as f:
         f.write("{}".format("".join(fcopy)))
