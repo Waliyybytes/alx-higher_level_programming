@@ -2,6 +2,7 @@
 """
     Log parser
 """
+
 import sys
 
 s_code = {'200': 0, '301': 0, '400': 0, '401': 0,
@@ -13,12 +14,13 @@ try:
         tens += 1
         f_size += int(line.split()[-1])
         s_code[line.split()[-2]] += 1
-        if tens == 10:
+        if tens % 10 == 0:
             print("File size: {}".format(f_size))
             for key in s_code:
-                print("{}: {}".format(key, s_code[key]))
-            tens = 0
+                if s_code[key]:
+                    print("{}: {}".format(key, s_code[key]))
 except KeyboardInterrupt as e:
     print("File size: {}".format(f_size))
     for key in s_code:
-        print("{}: {}".format(key, s_code[key]))
+        if s_code[key]:
+            print("{}: {}".format(key, s_code[key]))
