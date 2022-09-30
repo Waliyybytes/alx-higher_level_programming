@@ -19,4 +19,6 @@ try:
                 print("{}: {}".format(key, s_code[key]))
             tens = 0
 except KeyboardInterrupt as e:
-    print(e)
+    print("File size: {}".format(f_size))
+    for key in s_code:
+        print("{}: {}".format(key, s_code[key]))
