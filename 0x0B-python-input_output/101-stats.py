@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+    Log parser
+"""
 import sys
 
 s_code = {'200': 0, '301': 0, '400': 0, '401': 0,
