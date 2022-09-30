@@ -21,7 +21,11 @@ try:
             for key in s_code:
                 if s_code[key]:
                     print("{}: {}".format(key, s_code[key]))
-except KeyboardInterrupt:
+    print("File size: {}".format(f_size))
+    for key in s_code:
+        if s_code[key]:
+            print("{}: {}".format(key, s_code[key]))
+except KeyboardInterrupt as e:
     print("File size: {}".format(f_size))
     for key in s_code:
         if s_code[key]:
