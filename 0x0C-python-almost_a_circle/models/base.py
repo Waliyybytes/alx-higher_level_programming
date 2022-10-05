@@ -35,7 +35,7 @@ class Base:
             for obj in list_objs:
                 tmp.append(cls.to_dictionary(obj))
         with open(filename, 'w') as f:
-            json.dump(cls.to_json_string(tmp), f)
+            json.dump(cls.to_json_string(tmp), ensure_ascii=False, f)
 
     @staticmethod
     def from_json_string(json_string):
