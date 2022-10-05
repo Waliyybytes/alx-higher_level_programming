@@ -39,7 +39,7 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-    
+
     @height.setter
     def height(self, value):
         """ height setter"""
@@ -76,11 +76,12 @@ class Rectangle(Base):
         print("\n" * self.__y, end="")
         for _ in range(self.__height):
             print((" " * self.__x) + ("#" * self.__width))
-    
+
     def __str__(self):
         """ informal representation of Rectangle class"""
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
-    
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - " +
+    "{self.__width}/{self.__height}"
+
     def update(self, *args, **kwargs):
         """ update arguments via args"""
         if len(args):
@@ -116,8 +117,3 @@ class Rectangle(Base):
         rect_dict["x"] = self.x
         rect_dict["y"] = self.y
         return rect_dict
-
-
-
-
-

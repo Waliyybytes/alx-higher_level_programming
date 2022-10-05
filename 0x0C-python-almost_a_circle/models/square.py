@@ -11,7 +11,7 @@ class Square(Rectangle):
         """class initialization with attributes"""
         super().__init__(size, size, x, y, id)
         self.size = size
-    
+
     @property
     def size(self):
         """ size getter"""
@@ -57,8 +57,3 @@ class Square(Rectangle):
         sqr_dict["x"] = self.x
         sqr_dict["y"] = self.y
         return sqr_dict
-
-
-
-
-

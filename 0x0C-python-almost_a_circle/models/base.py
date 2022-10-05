@@ -9,6 +9,7 @@ import csv
 class Base:
     """  base class definition """
     __nb_objects = 0
+
     def __init__(self, id=None):
         """ class instantiation """
         if id is not None:
@@ -33,10 +34,9 @@ class Base:
         if list_objs is not None:
             for obj in list_objs:
                 tmp.append(cls.to_dictionary(obj))
-        with open(filename,'w') as f:
+        with open(filename, 'w') as f:
             json.dump(tmp, f)
-            
-    
+
     @staticmethod
     def from_json_string(json_string):
         """ from json string """
@@ -47,7 +47,7 @@ class Base:
         """ from dictionary to instance"""
         if cls.__name__ == "Square":
             tmp = cls(1)
-        elif cls.__name__ == "Rectangle" :
+        elif cls.__name__ == "Rectangle":
             tmp = cls(1, 1)
         tmp.update(**dictionary)
         return tmp
@@ -61,7 +61,7 @@ class Base:
                 tmp = cls.from_json_string(f.read())
                 for i in range(len(tmp)):
                     tmp[i] = cls.create(**tmp[i])
-        except:
+        except Exception:
             pass
         return tmp
 
@@ -73,11 +73,12 @@ class Base:
             write_csv = csv.writer(f)
             if cls.__name__ == "Rectangle":
                 for obj in list_objs:
-                    write_csv.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                    write_csv.writerow([obj.id, obj.width,
+                                        obj.height, obj.x, obj.y])
             elif cls.__name__ == "Square":
                 for obj in list_objs:
                     write_csv.writerow([obj.id, obj.size, obj.x, obj.y])
-        
+
     @classmethod
     def load_from_file_csv(cls):
         """ load from a csv file"""
@@ -100,9 +101,6 @@ class Base:
                                     "y": int(row[3])}
                     obj = cls.create(**csv_dict)
                     tmp.append(obj)
-        except:
+        except Exception:
             pass
         return tmp
-
-
-
