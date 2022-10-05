@@ -40,6 +40,8 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """ from json string """
+        if json_string is None:
+            return []
         return list(json.loads(json_string))
 
     @classmethod
