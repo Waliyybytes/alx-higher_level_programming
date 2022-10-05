@@ -22,7 +22,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """ format for sharing data"""
         if list_dictionaries is None:
-            return []
+            return "[]"
         l_json = json.dumps(list_dictionaries)
         return l_json
 
