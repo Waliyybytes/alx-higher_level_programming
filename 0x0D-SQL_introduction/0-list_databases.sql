@@ -1,2 +1,2 @@
---script to list the current databases
+-- script to list the current databases
 SHOW DATABASES;
