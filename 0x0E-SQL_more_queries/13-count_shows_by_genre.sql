@@ -3,5 +3,6 @@ SELECT x.genre_id AS genre, COUNT(y.title) AS number_of_shows
 FROM tv_show_genres x
 INNER JOIN tv_shows y
 ON x.show_id = y.id
+GROUP BY x.genre_id
 ORDER BY number_of_shows DESC;
 
