@@ -8,7 +8,7 @@ LEFT JOIN
 	ON x.id = y.genre_id
 	INNER JOIN tv_shows z
 	ON y.show_id = z.id
-	WHERE z.title = 'Dexter') as i
+	WHERE z.title = 'Dexter') AS i
 ON x.id = i.id
 WHERE i.title IS NULL
 ORDER BY x.name;
