@@ -21,5 +21,4 @@ if __name__ == "__main__":
         """.format(sys.argv[4]))
     query_rows = cur.fetchall()
     print(", ".join([row[0] for row in query_rows]))
-cur.close()
-db.close()
+
