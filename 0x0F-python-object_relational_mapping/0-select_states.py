@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" lists all states from the database hbtn_0e_0_usa """
+"""lists all states from the database hbtn_0e_0_usa """
 import sys
 import MySQLdb
 
@@ -16,5 +16,3 @@ if __name__ == "__main__":
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
-cur.close()
-db.close()
