@@ -14,5 +14,6 @@ if __name__ == "__main__":
         )
     )
     session = sessionmaker(bind=engine)()
-    for c_id, c_name, s_name in session.query(City.id, City.name, State.name).join(State).order_by(City.id):
+    for c_id, c_name, s_name in session.query(
+            City.id, City.name, State.name).join(State).order_by(City.id):
         print("{}: ({}) {}".format(s_name, c_id, c_name))

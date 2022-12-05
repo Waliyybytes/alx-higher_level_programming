@@ -17,6 +17,6 @@ if __name__ == "__main__":
                     State.id).filter(
                             State.name == func.binary(argv[4])).first()
     if check:
-        print(f"{check.id}")
+        print("{}".format(check.id))
     else:
-        print("Not Found")
+        print("Not found")
