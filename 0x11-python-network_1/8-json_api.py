@@ -7,7 +7,7 @@ from sys import argv
 def search() -> None:
     """ post on url and search api wih letter"""
     char = "" if len(argv) < 2 else argv[1]
-    dat = {'q' : char}
+    dat = {'q': char}
     r = requests.post("http://0.0.0.0:5000/search_user", data=dat)
 
     try:
