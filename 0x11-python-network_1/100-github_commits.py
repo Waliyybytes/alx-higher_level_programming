@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" script to check  api on commits """
 import requests
 from sys import argv
 
