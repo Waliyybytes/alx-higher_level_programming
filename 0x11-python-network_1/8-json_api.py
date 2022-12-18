@@ -19,3 +19,7 @@ def search() -> None:
             print('[{}] {}'.format(u['id'], u['name']))
         else:
             print('No result')
+
+
+if __name__ == '__main__':
+    search()
